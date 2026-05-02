@@ -13,6 +13,17 @@
   overflow-y: scroll;
 }
 
+.todo-add-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
 .img-delete-todo{
   height: 20px;
   cursor: pointer;
@@ -22,6 +33,14 @@
   height: 20px;
   cursor: pointer;
   margin-right: 20px;
+}
+
+
+.input-todo {
+  font-size: 20px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  width: 400px;
 }
 
 .btn-add-todo {
