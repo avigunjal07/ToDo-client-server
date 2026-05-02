@@ -33,6 +33,28 @@ const loadTodos = async () => {
     loadTodos();
   };
 
+  const editTodo = async () => {
+    if (!newTodo.trim()) return;
+
+    await axios.put(`${BASE_URL}/todos`, {
+      oldTodoItem: oldTodo, 
+      newTodoItem: newTodo, 
+    });
+
+    setEditMode(false);
+    setNewTodo("");
+    setOldTodo("");
+    loadTodos();
+  };
+
+  const deleteTodo = async (todoItem) => {
+    await axios.delete(`${BASE_URL}/todos`, {
+      data: { todoItem }, 
+    });
+
+    loadTodos();
+  };
+
   useEffect(() => {
     loadTodos();
   }, []);
