@@ -12,6 +12,31 @@ function App() {
 
 const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
 
+const loadTodos = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/todos`);
+      setTodos(Array.isArray(response.data.data) ? response.data.data : []);
+    } catch (error) {
+      console.error(error);
+      setTodos([]);
+    }
+  };
+
+  const addTodo = async () => {
+    if (!newTodo.trim()) return;
+
+    await axios.post(`${BASE_URL}/todos`, {
+      todoItem: newTodo, 
+    });
+
+    setNewTodo("");
+    loadTodos();
+  };
+
+  useEffect(() => {
+    loadTodos();
+  }, []);
+
 return (
     <div>
       <h1>Todo List</h1>
