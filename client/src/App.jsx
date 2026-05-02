@@ -12,7 +12,8 @@ function App() {
 
 const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
 
-const loadTodos = async () => {
+
+  const loadTodos = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/todos`);
       setTodos(Array.isArray(response.data.data) ? response.data.data : []);
@@ -59,7 +60,7 @@ const loadTodos = async () => {
     loadTodos();
   }, []);
 
-return (
+  return (
     <div>
       <h1>Todo List</h1>
       <p>{editMode ? "Edit Todo" : "Add Todo"}</p>
