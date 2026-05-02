@@ -10,7 +10,7 @@ function App() {
   const [editMode, setEditMode] = useState(false);
   const [newTodo, setNewTodo] = useState("");
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
+const BASE_URL = "https://todo-client-server-lowd.onrender.com";
 
 
   const loadTodos = async () => {
