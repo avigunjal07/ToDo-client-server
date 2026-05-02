@@ -1,12 +1,24 @@
 const express = require("express");
+const cors = require("cors");
+
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
+// test route
 app.get("/", (req, res) => {
   res.send("Server is running 🚀");
 });
 
-app.listen(3000, () => {
-  console.log("Server started on port 3000");
+// todos route
+app.get("/todos", (req, res) => {
+  res.json([{ id: 1, task: "Learn Render Deployment" }]);
+});
+
+// IMPORTANT for Render
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
