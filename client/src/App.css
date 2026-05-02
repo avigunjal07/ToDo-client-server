@@ -1,3 +1,8 @@
+body{
+  background-color: #FF70BF;
+  color: white;
+}
+
 .todo-card {
   border: 1px solid black;
   margin: 10px 20px;
@@ -6,6 +11,7 @@
     display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #831C91;
 }
 
 .todo-items-container {
@@ -21,7 +27,7 @@
   padding: 10px 20px;
   display: flex;
   justify-content: center;
-  background-color: #f0f0f0;
+  background-color: #831C91;
 }
 
 .img-delete-todo{
@@ -38,16 +44,19 @@
 
 .input-todo {
   font-size: 20px;
-  padding: 5px 10px;
-  margin-right: 10px;
+  padding: 10px 20px;
+  margin-right: 25px;
   width: 400px;
+  border-radius: 5px;
+  border: none;
 }
 
 .btn-add-todo {
   font-size: 20px;
   padding: 5px 15px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #831C91;
   border-radius: 5px;
   cursor: pointer;
+  border: none;
 }
